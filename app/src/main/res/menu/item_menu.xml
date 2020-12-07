@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <group>
+
+        <item
+            android:id="@+id/thoisu"
+            android:title="Thời sự"
+            >
+        </item>
+        <item
+            android:id="@+id/gocnhin"
+            android:title="Góc nhìn"
+            >
+        </item>
+        <item
+
+            android:id="@+id/thegioi"
+            android:title="Thế giới">
+        </item>
+        <item
+            android:id="@+id/thethao"
+            android:title="Thể Thao">
+        </item>
+        <item
+            android:id="@+id/congnghe"
+            android:title="Công nghệ">
+        </item>
+        <item
+
+            android:id="@+id/giaitri"
+            android:title="Giải trí">
+        </item>
+
+        <item
+
+            android:id="@+id/khoahoc"
+            android:title="Khoa học">
+        </item>
+    </group>
+</menu>
