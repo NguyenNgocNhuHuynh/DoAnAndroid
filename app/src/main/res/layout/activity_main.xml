@@ -63,6 +63,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
+
+
+
 <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
 <!--        android:id="@+id/constraintLayout"-->
 <!--        android:layout_width="0dp"-->
@@ -71,7 +75,6 @@
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent">-->
-
 <!--        <ImageView-->
 <!--            android:id="@+id/img_logo"-->
 <!--            android:layout_width="145dp"-->
@@ -99,7 +102,6 @@
 <!--            app:layout_constraintTop_toTopOf="parent"-->
 <!--            app:srcCompat="@drawable/ic_baseline_search_24" />-->
 <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
 <!--    <LinearLayout-->
 <!--        android:id="@+id/linearLayout"-->
 <!--        android:layout_width="0dp"-->
@@ -109,16 +111,13 @@
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">-->
-
 <!--        <androidx.viewpager.widget.ViewPager-->
-<!--            android:id="@+id/view_pager"-->
+<!--           android:id="@+id/view_pager"-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="match_parent" />-->
 <!--    </LinearLayout>-->
-
 <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/nav_
-view"-->
+<!--        android:id="@+id/nav_view"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="50dp"-->
 <!--        android:background="#FFFFFF"-->

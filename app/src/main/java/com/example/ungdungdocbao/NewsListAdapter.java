@@ -37,10 +37,10 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
     @Override
     public void onBindViewHolder(@NonNull NewsViewHolder holder, int position) {
         Post mCurrent = newsList.get(position);
-
-        String url = "http://192.168.0.102/DoAnAndroid/public/img_Android/"+mCurrent.getThumbnail();
-
+        //--Lay hinh---//
+        String url = "http://192.168.1.7/DoAnAndroid/public/img_Android/"+mCurrent.getThumbnail();
         Picasso.with(holder.mcontext).load(url).centerCrop().resize(411, 280).into(holder.img);
+        //----//
         holder.mTitle.setText(mCurrent.getTitle());
         holder.mDesciption.setText(mCurrent.getDescription());
 
