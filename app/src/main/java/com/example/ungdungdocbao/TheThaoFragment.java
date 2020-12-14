@@ -81,7 +81,7 @@ private final List<Post> mListNews = new ArrayList<>();
 
         // Tạo request lên server.
         Request request = new Request.Builder()
-                .url("http://192.168.0.102/DoAnAndroid/public/api/thethao")
+                .url("http://192.168.137.216/DoAnAndroid/public/api/thethao")
                 .build();
 
         // Thực thi request.

@@ -1,6 +1,7 @@
 package com.example.ungdungdocbao;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.ungdungdocbao.Models.Post;
 import com.example.ungdungdocbao.ui.home.HomeViewModel;
@@ -92,6 +94,7 @@ public class ThoiSuFragment extends Fragment {
     }
 
 
+
     public void viewdata() {
         // Khởi tạo OkHttpClient để lấy dữ liệu.
         OkHttpClient client = new OkHttpClient();
@@ -105,7 +108,7 @@ public class ThoiSuFragment extends Fragment {
 
         // Tạo request lên server.
         Request request = new Request.Builder()
-                .url("http://192.168.1.7/DoAnAndroid/public/api/thoisu")
+                .url("http://192.168.0.104/DoAnAndroid/public/api/thoisu")
                 .build();
 
         // Thực thi request.

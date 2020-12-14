@@ -89,7 +89,7 @@ public class TheGioiFragment extends Fragment {
 
         // Tạo request lên server.
         Request request = new Request.Builder()
-                .url("http://192.168.0.102/DoAnAndroid/public/api/thegioi")
+                .url("http://192.168.137.216/DoAnAndroid/public/api/thegioi")
                 .build();
 
         // Thực thi request.
