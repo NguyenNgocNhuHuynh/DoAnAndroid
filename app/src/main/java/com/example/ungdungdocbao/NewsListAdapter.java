@@ -21,7 +21,7 @@ import java.util.List;
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsViewHolder> {
     private final List<Post> newsList;
     private LayoutInflater mInflater;
-    Context mcontext;
+    //Context mcontext;
 
 
 
@@ -35,9 +35,6 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
     @Override
     public NewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View mItemView=mInflater.inflate(R.layout.list_news,parent,false);
-
-
-
         return new NewsViewHolder(mItemView,this);
 
     }
@@ -49,7 +46,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
     public void onBindViewHolder(@NonNull NewsViewHolder holder, int position) {
         Post mCurrent = newsList.get(position);
         //--Lay hinh---//
-        String url = "http://192.168.137.216/DoAnAndroid/public/img_Android/"+mCurrent.getThumbnail();
+       // String url = "http://192.168.43.216/DoAnAndroid/public/img_Android/"+mCurrent.getThumbnail();
+        String url = "http://10.0.2.2/DoAnAndroid/public/img_Android/"+mCurrent.getThumbnail();
         Picasso.with(holder.mcontext).load(url).centerCrop().resize(411, 280).into(holder.img);
         //----//
         holder.mTitle.setText(mCurrent.getTitle());
@@ -63,6 +61,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
         return newsList.size();
     }
 
+    //chi tiet bai viet
     public class NewsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private final ImageView img;
         private final TextView mTitle;

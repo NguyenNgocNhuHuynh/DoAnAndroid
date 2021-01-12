@@ -2,8 +2,10 @@ package com.example.ungdungdocbao;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import com.example.ungdungdocbao.ui.dashboard.ViewFragment;
 import com.example.ungdungdocbao.ui.home.HomeFragment;
@@ -29,7 +31,7 @@ import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
-
+EditText editText;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         viewPager = findViewById(R.id.view_pager);
+        editText = (EditText)findViewById(R.id.edittimkiem);
         setupViewPager(viewPager);
         final BottomNavigationView navigation = findViewById(R.id.nav_view);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -74,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         navigation.setSelectedItemId(R.id.navigation_dashboard);
                         break;
                     case 2:
-                        navigation.setSelectedItemId(R.id.navigation_setting);
+                        navigation.setSelectedItemId(R.id.navigation_notifications);
                 }
             }
 
@@ -96,4 +99,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void TimKiem(View view) {
+       // setContentView(R.layout.fragment_search);
+
+       if(editText.getVisibility() == View.VISIBLE ){
+           Intent intent = new Intent(MainActivity.this,Search_POST.class);
+           intent.putExtra("Edit_KEY",editText.getText().toString());
+           Log.d("Edit","Ten:" + editText.getText().toString());
+           startActivity(intent);
+         //  setContentView(R.layout.fragment_search);
+           editText.setVisibility(View.INVISIBLE);
+       }else {
+           editText.setVisibility(View.VISIBLE);
+       }
+
+    }
 }

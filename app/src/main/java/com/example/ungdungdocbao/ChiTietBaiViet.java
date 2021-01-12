@@ -32,13 +32,16 @@ public class ChiTietBaiViet extends AppCompatActivity {
         TextView mpubDate = findViewById(R.id.pubDate);
         TextView mDecription = findViewById(R.id.decription);
 
-        String url = "http://192.168.137.216/DoAnAndroid/public/img_Android/"+img;
+       // String url = "http://192.168.137.216/DoAnAndroid/public/img_Android/"+img;
+        String url = "http://10.0.2.2/DoAnAndroid/public/img_Android/"+img;
         Picasso.with(this).load(url).centerCrop().resize(411, 280).into(imageView);
         txttitle.setText(title);
         mcontent.setText(content);
         mpubDate.setText(pubDate);
         mDecription.setText(decription);
+    }
 
-
+    public void BinhLuanBV(View view) {
+        setContentView(R.layout.signup);
     }
 }

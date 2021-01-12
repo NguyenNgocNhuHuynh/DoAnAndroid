@@ -6,17 +6,6 @@ import java.util.Date;
 
 public class Post {
 
-//    $table->bigIncrements('id');
-//    $table->string('title');
-//    $table->dateTime('pubDate');
-//    $table->string('link')->nullable();
-//    $table->string('guid')->nullable();
-//    $table->string('author')->nullable();
-//    $table->string('thumbnail')->nullable();
-//    $table->string('description');
-//    $table->string('content');
-//    $table->boolean('status');
-//    $table->unsignedBigInteger('idcat');
 
     private int id;
     private String title;

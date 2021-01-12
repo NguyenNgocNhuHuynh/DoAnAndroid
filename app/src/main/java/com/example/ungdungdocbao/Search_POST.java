@@ -1,15 +1,12 @@
 package com.example.ungdungdocbao;
 
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.ungdungdocbao.Models.Post;
 import com.squareup.moshi.JsonAdapter;
@@ -18,8 +15,6 @@ import com.squareup.moshi.Types;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import okhttp3.Call;
@@ -28,52 +23,25 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CongNgheFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class CongNgheFragment extends Fragment {
-    private RecyclerView recyclerView;
-    private NewsListAdapter mAdapter;
-    private final List<Post> mListNews = new ArrayList<>();
-//    private final LinkedList<Post> mListNews = new LinkedList<>();
-    View v;
+public class Search_POST extends AppCompatActivity {
 
-    public CongNgheFragment() {
-        // Required empty public constructor
-    }
-
-
-    public static CongNgheFragment newInstance(String param1, String param2) {
-        CongNgheFragment fragment = new CongNgheFragment();
-
-        return fragment;
-    }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        for(int i=0;i<10;i++)
-//        {
-//            Post post = new News("Tieu de"+i,"Mo ta "+i);
-//            mListNews.addLast(post);
-//        }
-    }
+        setContentView(R.layout.activity_search__p_o_s_t);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_the_thao, container, false);
-        recyclerView=(RecyclerView)v.findViewById(R.id.recyclerview);
-//        mAdapter=new NewsListAdapter(getContext(), mListNews);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        recyclerView.setAdapter(mAdapter);
-        viewdata();
-        return v;
+        Intent intent = getIntent();
+
+        String title = intent.getStringExtra("Edit_KEY");
+        Log.d("huynhcho","ok" + title);
+       viewdata(title);
     }
-    public void viewdata() {
+    public void viewdata(String timkiem) {
         // Khởi tạo OkHttpClient để lấy dữ liệu.
+        final RecyclerView rvTKs=(RecyclerView)findViewById(R.id.recy_search);
+
+        rvTKs.setLayoutManager(new LinearLayoutManager(this));
         OkHttpClient client = new OkHttpClient();
 
         // Khởi tạo Moshi adapter để biến đổi json sang model java (ở đây là User)
@@ -85,7 +53,7 @@ public class CongNgheFragment extends Fragment {
 
         // Tạo request lên server.
         Request request = new Request.Builder()
-                .url("http://10.0.2.2:8000/api/congnghe")
+                .url("http://10.0.2.2:8000/api/post?title="+timkiem)
                 .build();
 
         // Thực thi request.
@@ -103,10 +71,10 @@ public class CongNgheFragment extends Fragment {
                 final List<Post> list = jsonAdapter.fromJson(json);
 
                 // Cho hiển thị lên RecyclerView.
-                getActivity().runOnUiThread(new Runnable() {
+               runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        recyclerView.setAdapter(new NewsListAdapter(getActivity(), list));
+                        rvTKs.setAdapter(new NewsListAdapter(Search_POST.this, list));
                     }
                 });
 

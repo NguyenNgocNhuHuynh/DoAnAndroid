@@ -103,7 +103,7 @@ public class GiaiTriFragment extends Fragment {
 
         // Tạo request lên server.
         Request request = new Request.Builder()
-                .url("http://192.168.1.43/DoAnAndroid/public/api/giaitri")
+                .url("http://10.0.2.2:8000/api/giaitri")
                 .build();
 
         // Thực thi request.

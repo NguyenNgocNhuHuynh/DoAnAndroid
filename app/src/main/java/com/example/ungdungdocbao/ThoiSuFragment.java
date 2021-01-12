@@ -108,7 +108,7 @@ public class ThoiSuFragment extends Fragment {
 
         // Tạo request lên server.
         Request request = new Request.Builder()
-                .url("http://192.168.0.104/DoAnAndroid/public/api/thoisu")
+                .url("http://10.0.2.2:8000/api/thoisu")
                 .build();
 
         // Thực thi request.

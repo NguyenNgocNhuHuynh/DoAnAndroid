@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UngDungDocBao">
-        <activity android:name=".ChiTietBaiViet"></activity>
+        <activity android:name=".Search_POST"></activity>
+        <activity android:name=".ChiTietBaiViet" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

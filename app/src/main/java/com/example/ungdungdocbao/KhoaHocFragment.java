@@ -87,7 +87,7 @@ public class KhoaHocFragment extends Fragment {
 
         // Tạo request lên server.
         Request request = new Request.Builder()
-                .url("http://192.168.0.102/DoAnAndroid/public/api/khoahoc")
+                .url("http://10.0.2.2:8000/api/khoahoc")
                 .build();
 
         // Thực thi request.
